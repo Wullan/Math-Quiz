@@ -86,6 +86,7 @@ namespace Math_Quiz
             quotient.Value = 0;
 
             // Start the timer.
+            timeLabel.BackColor = SystemColors.Control;
             timeLeft = 30;
             timeLabel.Text = "30 seconds";
             timer1.Start();
@@ -132,6 +133,10 @@ namespace Math_Quiz
                 // by updating the Time Left label.
                 timeLeft = timeLeft - 1;
                 timeLabel.Text = timeLeft + " seconds";
+                if (timeLeft < 6)
+                {
+                    timeLabel.BackColor = Color.Red;
+                }
             }
             else
             {
